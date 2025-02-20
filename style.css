@@ -696,7 +696,7 @@ input{
 .document-content {
     height: 565.88px;
     margin: 14px;
-    border: 3px solid;
+    border: 1.5px solid;
     font-size: 10px;
     font-weight: 545;
     padding-left: 25px;
@@ -717,7 +717,7 @@ input{
 }
 .page-header-text-underline,
 .category-head-text-style-underline {
-    border-bottom: 1px solid;
+    border-bottom: 0.5px solid;
 }
 /* Lab Index */
 .index-text {
@@ -884,7 +884,7 @@ input{
 .document-content {
     height: 474.9px;
     margin: 10px;
-    border: 3px solid rgb(0, 0, 0, 0.5);
+    border: 1.5px solid rgb(0, 0, 0, 0.5);
     font-size: 9px;
     font-weight: 545;
     padding-left: 25px;
@@ -905,7 +905,7 @@ input{
 }
 .page-header-text-underline,
 .category-head-text-style-underline {
-    border-bottom: 3px solid;
+    border-bottom: 0.5px solid;
 }
 /* Lab Index */
 .index-text {
@@ -923,7 +923,7 @@ input{
     height: 474.9px;
     margin: 10px;
     font-size: 14px;
-    border: 3px solid rgb(0, 0, 0, 0.5);
+    border: 1.5px solid rgb(0, 0, 0, 0.5);
     font-family: 'Times New Roman', serif; 
 }
 .index-border {
@@ -976,7 +976,7 @@ input{
 }
 #documentContentIndex {
 
-    border: 1px solid rgb(0, 0, 0, 0.5);
+    border: 0.5px solid rgb(0, 0, 0, 0.5);
     margin-left: 1px;
     margin-right: 1px;
     font-size: 9px;
