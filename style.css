@@ -698,7 +698,7 @@ input{
     margin: 14px;
     border: 1.5px solid;
     font-size: 10px;
-    font-weight: 545;
+    font-weight: 445;
     padding-left: 25px;
     padding-right: 25px;
     line-height: 18px;
@@ -707,7 +707,7 @@ input{
 .space {
     padding-left: 70px;
     font-family: 'Times New Roman', serif;
-    font-weight: 545;
+    font-weight: 445;
 }
 .page-header-text {
     font-size: 10px;
@@ -717,7 +717,7 @@ input{
 }
 .page-header-text-underline,
 .category-head-text-style-underline {
-    border-bottom: 0.5px solid;
+    border-bottom: 1px solid;
 }
 /* Lab Index */
 .index-text {
@@ -886,7 +886,7 @@ input{
     margin: 10px;
     border: 1.5px solid rgb(0, 0, 0, 0.5);
     font-size: 9px;
-    font-weight: 545;
+    font-weight: 445;
     padding-left: 25px;
     padding-right: 25px;
     line-height: 15px;
@@ -895,7 +895,7 @@ input{
 .space {
     padding-left: 60px;
     font-family: 'Times New Roman', serif;
-    font-weight: 545;
+    font-weight: 445;
 }
 .page-header-text {
     font-size: 8px;
@@ -905,7 +905,7 @@ input{
 }
 .page-header-text-underline,
 .category-head-text-style-underline {
-    border-bottom: 0.5px solid;
+    border-bottom: 1px solid;
 }
 /* Lab Index */
 .index-text {
