@@ -734,7 +734,7 @@ input{
 .index-document-content {
     height: 565.88px;
     margin: 14px;
-    font-size: 14px;
+    font-size: 10px;
     font-family: 'Times New Roman', serif; 
 }
 .index-border {
@@ -922,7 +922,7 @@ input{
 .index-document-content {
     height: 474.9px;
     margin: 10px;
-    font-size: 14px;
+    font-size: 9px;
     border: 1.5px solid rgb(0, 0, 0, 0.5);
     font-family: 'Times New Roman', serif; 
 }
