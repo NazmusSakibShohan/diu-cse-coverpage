@@ -2,7 +2,7 @@
 
 [🌐 Live Demo](https://nazmussakibshohan.github.io/diu-cse-coverpage/)  
 
-A simple and responsive **cover page system** for **Daffodil International University (DIU) CSE students**.  
+A simple and responsive **cover page system** for **Dhaka International University (DIU) CSE students**.  
 This repository provides ready-to-use HTML, CSS, and JavaScript templates for assignment cover pages, lab reports, and project submissions.  
 
 ---
