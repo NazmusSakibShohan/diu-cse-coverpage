@@ -490,8 +490,8 @@ body {
     background: url(images/diu.jpg) no-repeat left/cover fixed;
 }
 .project {
-    margin-left: 17%;
-    margin-right: 17%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .nav-logo a {
     font-size: 20px;
@@ -520,9 +520,12 @@ input{
 }
 
 .document {
-    width: 600px;
-    min-width: 600px;
-    height: 848.4px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.85);
+    transform-origin: top center;
 }
 .document-watermark {
     top: 260px;
@@ -530,14 +533,15 @@ input{
     right: 110px;
 }
 .document-content {
-    height: 808.4px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 20px;
     border: 3px solid rgb(0, 0, 0);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 545;
     padding-left: 35px;
     padding-right: 35px;
-    line-height: 26px;
+    line-height: 28px;
     font-family: 'Times New Roman', serif;
 }
 .space {
@@ -546,11 +550,10 @@ input{
     font-weight: 545;
 }
 .page-header-text {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 15px;
     font-family: 'Times New Roman', serif;
     font-weight: 700;
-
 }
 /* Lab Index */
 .index-text {
@@ -560,12 +563,16 @@ input{
     }
 
 .index-document {
-    width: 600px;
-    min-width: 600px;
-    height: 848.4px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.85);
+    transform-origin: top center;
 }
 .index-document-content {
-    height: 808.4px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 20px;
     border: 3px solid rgb(0, 0, 0);
     font-size: 18px;
@@ -619,7 +626,6 @@ input{
     font-size: 14px;
 }
 #documentContentIndex {
-
     border: 1px solid rgb(0, 0, 0);
     margin-left: 5px;
     margin-right: 5px;
@@ -646,7 +652,7 @@ body {
     background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
 }
 .nav-logo a {
-    font-size: 20px;
+    font-size: 18px;
 }
 .nav-icon {
     height: 30px;
@@ -656,21 +662,21 @@ body {
     padding: 9px 14px 9px 14px;
 }
 .project {
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .suggestion-text {
     font-size: 11px;
 }
 .form h1 {
-font-size: 25px;
+font-size: 22px;
 }
 
 .form-logo img{
     width: 100%;
 }
 .category-head-text {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 545;
 }
 label{
@@ -684,9 +690,12 @@ input{
     font-size: 20px;
 }
 .document {
-    width: 420px;
-    min-width: 420px;
-    height: 593.88px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.75);
+    transform-origin: top center;
 }
 .document-watermark {
     top: 200px;
@@ -694,14 +703,15 @@ input{
     right: 80px;
 }
 .document-content {
-    height: 565.88px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 14px;
-    border: 1.5px solid;
-    font-size: 10px;
+    border: 2px solid;
+    font-size: 14px;
     font-weight: 445;
     padding-left: 25px;
     padding-right: 25px;
-    line-height: 18px;
+    line-height: 22px;
     font-family: 'Times New Roman', serif;
 }
 .space {
@@ -710,7 +720,7 @@ input{
     font-weight: 445;
 }
 .page-header-text {
-    font-size: 10px;
+    font-size: 16px;
     margin-bottom: 15px;
     font-family: 'Times New Roman', serif;
     font-weight: 700;
@@ -727,14 +737,18 @@ input{
  }
 
 .index-document {
-    width: 420px;
-    min-width: 420px;
-    height: 593.88px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.75);
+    transform-origin: top center;
 }
 .index-document-content {
-    height: 565.88px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 14px;
-    font-size: 10px;
+    font-size: 14px;
     font-family: 'Times New Roman', serif; 
 }
 .index-border {
@@ -767,11 +781,11 @@ input{
 .index-border-footer, 
 .index-right-footer, 
 .index-left-footer {
-    padding: 1px;
+    padding: 2px;
     height: 43.9px;
 }
 #index-header {
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 10px;
 }
 #dateSubmission {
@@ -783,10 +797,9 @@ input{
 #pageLimit {
     text-align: center;
     padding-top: 12px;
-    font-size: 10px;
+    font-size: 12px;
 }
 #documentContentIndex {
-
     border: 1px solid rgb(0, 0, 0);
     margin-left: 2px;
     margin-right: 2px;
@@ -795,16 +808,16 @@ input{
 }
 /* --------------------------- */
 .page-reference-text-index {
-    font-size: 8px;
+    font-size: 9px;
     margin-top: -12px;
 }
 .page-reference-text {
-    font-size: 8px;
+    font-size: 9px;
     margin-top: -12px;
 }
 .download,.image{
-    font-size: 10px;
-    padding: 8px 12px;
+    font-size: 14px;
+    padding: 10px 16px;
 }
 .footer a {
     font-size: 12px;
@@ -823,14 +836,14 @@ body {
     background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
 }
 .nav-logo a {
-    font-size: 20px;
+    font-size: 16px;
 }
 .nav-icon {
-    height: 30px;
+    height: 25px;
 }
 .dropdown button {
-    font-size: 14px;
-    padding: 9px 14px 9px 14px;
+    font-size: 12px;
+    padding: 7px 12px 7px 12px;
 }
 .dropdown-content {
     margin-left: 5px;
@@ -844,8 +857,8 @@ body {
 }
 
 .project {
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 .suggestion-text {
     font-size: 10px;
@@ -862,19 +875,23 @@ font-size: 20px;
     font-weight: 545;
 }
 label{
-    font-size: 16px;
+    font-size: 14px;
 }
 input{
     border: none ;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 12px;
 }
 .experiment-tag { 
-    font-size: 20px;
+    font-size: 18px;
 }
 .document {
-    width: 350px;
-    min-width: 350px;
-    height: 494.9px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.65);
+    transform-origin: top center;
 }
 .document-watermark {
     top: 160px;
@@ -882,23 +899,24 @@ input{
     right: 70px;
 }
 .document-content {
-    height: 474.9px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 10px;
-    border: 1.5px solid rgb(0, 0, 0, 0.5);
-    font-size: 9px;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 12px;
     font-weight: 445;
-    padding-left: 25px;
-    padding-right: 25px;
-    line-height: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 18px;
     font-family: 'Times New Roman', serif;
 }
 .space {
-    padding-left: 60px;
+    padding-left: 50px;
     font-family: 'Times New Roman', serif;
     font-weight: 445;
 }
 .page-header-text {
-    font-size: 8px;
+    font-size: 14px;
     margin-bottom: 8px;
     font-family: 'Times New Roman', serif;
     font-weight: 700;
@@ -909,44 +927,48 @@ input{
 }
 /* Lab Index */
 .index-text {
-    font-size: 25px;
+    font-size: 24px;
     margin-top: 30px;
     margin-bottom: 10px;
     }
 
 .index-document {
-    width: 350px;
-    min-width: 350px;
-    height: 494.9px;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.65);
+    transform-origin: top center;
 }
 .index-document-content {
-    height: 474.9px;
+    height: auto;
+    aspect-ratio: 720/1042.52;
     margin: 10px;
-    font-size: 9px;
-    border: 1.5px solid rgb(0, 0, 0, 0.5);
+    font-size: 12px;
+    border: 2px solid rgb(0, 0, 0);
     font-family: 'Times New Roman', serif; 
 }
 .index-border {
-    font-size: 8px;
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+    font-size: 10px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .index-left-bottom {
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .index-right-bottom {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .index-border-header {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .index-border-footer {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
+    border-left: 1px solid rgb(0, 0, 0);
 }
 .index-right-footer {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
+    border-left: 1px solid rgb(0, 0, 0);
 }
 
 .index-border,
@@ -960,7 +982,7 @@ input{
     height: 36.4px;
 }
 #index-header {
-    font-size: 9px;
+    font-size: 12px;
     padding-top: 10px;
 }
 #dateSubmission {
@@ -972,38 +994,37 @@ input{
 #pageLimit {
     text-align: center;
     padding-top: 12px;
-    font-size: 8px;
+    font-size: 10px;
 }
 #documentContentIndex {
-
-    border: 0.5px solid rgb(0, 0, 0, 0.5);
+    border: 1px solid rgb(0, 0, 0);
     margin-left: 1px;
     margin-right: 1px;
-    font-size: 9px;
+    font-size: 10px;
     font-family: 'Times New Roman', serif;
 }
 /* --------------------------- */
 .page-reference-text-index {
-    font-size: 5px;
+    font-size: 8px;
     margin-top: -9px;
 }
 .page-reference-text {
-    font-size: 5px;
+    font-size: 8px;
     margin-top: -9px;
 }
 
 
 .download,.image{
-    font-size: 10px;
-    padding: 8px 12px;
+    font-size: 12px;
+    padding: 8px 14px;
 }
 .footer a {
-    font-size: 12px;
+    font-size: 11px;
 }
 footer p {
-    font-size: 12px;
+    font-size: 11px;
 }
 .footer .feedback {
-    font-size: 16px;
+    font-size: 14px;
 }
 }
