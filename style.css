@@ -270,6 +270,978 @@ input:hover {
     height: 1042.52px;
     margin: 30px;
     border: 3px solid rgb(0, 0, 0);
+    /* Reduced font size for better mobile view */
+    font-size: 16px;
+    font-weight: 545;
+    padding-left: 55px;
+    padding-right: 55px;
+    line-height: 30px;
+    z-index: 1;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 0.05em;
+    
+}
+
+.page-header-text {
+    display: flex;
+    justify-content: center;
+    /* Reduced font size */
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+
+}
+.page-header-text-underline {
+    border-bottom: 2px solid black;
+}
+.space {
+    padding-left: 120px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+.category-head-text-style {
+    color: rgb(24, 24, 138);
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+.category-head-text-style-underline {
+    border-bottom: 2px solid rgb(24, 24, 138);
+}
+.dateColor {
+    color: #000000;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+/* Index Document Design */
+
+.experiment-tag { 
+    text-align: center;
+    /* Reduced font size */
+    font-size: 22px;
+    font-weight: 545;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.index-text {
+    color: rgb(39, 39, 158);
+    /* Reduced font size */
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 20px;
+ }
+
+.index-document {
+    max-width: 780px;
+    min-width: 780px;
+    height: 1102.92px;
+    background-color: white;
+    text-align: center;
+}
+.index-document-content {
+    position: relative;
+    height: 1042.52px;
+    margin: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    /* Reduced font size */
+    font-size: 18px;
+    z-index: 1;
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    text-align: center;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    text-align: center;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 5px;
+    height: 80.6px;
+}
+#index-header {
+    padding-top: 20px;
+    /* Reduced font size */
+    font-size: 20px;
+}
+#dateSubmission {
+    /* Reduced font size */
+    font-size: 14px;
+}
+#index-experiment-no {
+    text-align: center;
+}
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 30px;
+}
+#documentContentIndex {
+    display: grid;
+    grid-template-columns: 1fr 2fr 6fr 1fr 1fr;
+    border: 1px solid rgb(0, 0, 0);
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+    /* Reduced font size */
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Index Design End */
+
+/* Website reference text */
+.page-reference-text-index {
+    font-size: 12px;
+    margin-top: -25px;
+}
+.page-reference-text {
+    text-align: center;
+    font-size: 12px;
+    margin-top: -25px;
+}
+/* ------------------------ */
+.document-buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.download,.image{
+    width: auto !important;
+    padding: 12px;
+    background-color: #01aa4d;
+    border: none;
+    border-radius: 1cap;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 50;
+}
+/* Document design end */
+
+
+/* Footer design */
+.footer {
+    background-color: rgba(17, 45, 58, 0.94);
+    border-radius: 1.5cap;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    bottom: 0;
+}
+.footer .feedback {
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: .6s;
+}
+
+/* Footer design end */
+/* --------------------------------------- */
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+.project {
+    margin-left: 23%;
+    margin-right: 23%; 
+}
+}
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+.project {
+    margin-left: 20%;
+    margin-right: 20%; 
+}
+}
+/* --------------------------------------- */
+
+/* Medium devices (tablets,laptops, 601px to 1000px) */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+body {
+    background: url(images/diu.jpg) no-repeat left/cover fixed;
+}
+.project {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.nav-logo a {
+    font-size: 20px;
+}
+.nav-icon {
+    height: 40px;
+}
+.dropdown button {
+    font-size: 16px;
+}
+.form h1 {
+font-size: 28px;
+}
+.suggestion-text {
+    font-size: 12px;
+}
+.category-head-text {
+    font-size: 25px;
+}
+
+input{
+    font-size: 16px;
+}
+.experiment-tag { 
+    font-size: 20px;
+}
+
+.document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.85);
+    transform-origin: top center;
+}
+.document-watermark {
+    top: 260px;
+    left: 110px;
+    right: 110px;
+}
+.document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    /* Reduced font size for mobile */
+    font-size: 14px;
+    font-weight: 545;
+    padding-left: 35px;
+    padding-right: 35px;
+    line-height: 26px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 100px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+.page-header-text {
+    /* Reduced font size for mobile */
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+/* Lab Index */
+.index-text {
+    /* Reduced font size for mobile */
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    }
+
+.index-document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.85);
+    transform-origin: top center;
+}
+.index-document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    /* Reduced font size for mobile */
+    font-size: 16px;
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    /* Reduced font size for mobile */
+    font-size: 16px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 3px;
+    height: 62px;
+}
+#index-header {
+    /* Reduced font size for mobile */
+    font-size: 18px;
+}
+#dateSubmission {
+    /* Reduced font size for mobile */
+    font-size: 12px;
+}
+
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 20px;
+    /* Reduced font size for mobile */
+    font-size: 14px;
+}
+#documentContentIndex {
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 5px;
+    /* Reduced font size for mobile */
+    font-size: 14px;
+    font-family: 'Times New Roman', serif;
+}
+.page-reference-text-index {
+    font-size: 10px;
+    margin-top: -16px;
+}
+.page-reference-text {
+    font-size: 10px;
+    margin-top: -16px;
+}
+/* --------------------------- */
+.download,.image{
+    font-size: 16px;
+}
+}
+/* Small devices (phones, 600px and below) */
+@media only screen and (min-width: 450px) and (max-width: 600px) {
+
+body {
+    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
+}
+.nav-logo a {
+    font-size: 18px;
+}
+.nav-icon {
+    height: 30px;
+}
+.dropdown button {
+    font-size: 14px;
+    padding: 9px 14px 9px 14px;
+}
+.project {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.suggestion-text {
+    font-size: 11px;
+}
+.form h1 {
+font-size: 22px;
+}
+
+.form-logo img{
+    width: 100%;
+}
+.category-head-text {
+    font-size: 22px;
+    font-weight: 545;
+}
+label{
+    font-size: 16px;
+}
+input{
+    border: none ;
+    font-size: 16px;
+}
+.experiment-tag { 
+    font-size: 18px;
+}
+.document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.75);
+    transform-origin: top center;
+}
+.document-watermark {
+    top: 200px;
+    left: 80px;
+    right: 80px;
+}
+.document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 14px;
+    border: 2px solid;
+    /* Further reduced font size for small mobile */
+    font-size: 12px;
+    font-weight: 545;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 22px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 70px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+.page-header-text {
+    /* Further reduced font size for small mobile */
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+.page-header-text-underline,
+.category-head-text-style-underline {
+    border-bottom: 1px solid;
+}
+/* Lab Index */
+.index-text {
+    /* Further reduced font size for small mobile */
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+ }
+
+.index-document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.75);
+    transform-origin: top center;
+}
+.index-document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 14px;
+    /* Further reduced font size for small mobile */
+    font-size: 14px;
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    /* Further reduced font size for small mobile */
+    font-size: 14px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 2px;
+    height: 43.9px;
+}
+#index-header {
+    /* Further reduced font size for small mobile */
+    font-size: 16px;
+    padding-top: 10px;
+}
+#dateSubmission {
+    /* Further reduced font size for small mobile */
+    font-size: 12px;
+}
+
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 12px;
+    /* Further reduced font size for small mobile */
+    font-size: 12px;
+}
+#documentContentIndex {
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 2px;
+    margin-right: 2px;
+    /* Further reduced font size for small mobile */
+    font-size: 12px;
+    font-family: 'Times New Roman', serif;
+}
+/* --------------------------- */
+.page-reference-text-index {
+    font-size: 9px;
+    margin-top: -12px;
+}
+.page-reference-text {
+    font-size: 9px;
+    margin-top: -12px;
+}
+.download,.image{
+    font-size: 14px;
+    padding: 10px 16px;
+}
+.footer a {
+    font-size: 12px;
+}
+footer p {
+    font-size: 12px;
+}
+.footer .feedback {
+    font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 449px) {
+
+body {
+    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
+}
+.nav-logo a {
+    font-size: 16px;
+}
+.nav-icon {
+    height: 25px;
+}
+.dropdown button {
+    font-size: 12px;
+    padding: 7px 12px 7px 12px;
+}
+.dropdown-content {
+    margin-left: 5px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+.dropdown-content a {
+    font-size: 10px;
+    padding: 8px;
+    padding-left: 8px;
+}
+
+.project {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.suggestion-text {
+    font-size: 10px;
+}
+.form h1 {
+font-size: 20px;
+}
+
+.form-logo img{
+    width: 100%;
+}
+.category-head-text {
+    font-size: 20px;
+    font-weight: 545;
+}
+label{
+    font-size: 14px;
+}
+input{
+    border: none ;
+    font-size: 14px;
+    padding: 12px;
+}
+.experiment-tag { 
+    font-size: 16px;
+}
+.document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.65);
+    transform-origin: top center;
+}
+.document-watermark {
+    top: 160px;
+    left: 70px;
+    right: 70px;
+}
+.document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    /* Smallest font size for very small devices */
+    font-size: 11px;
+    font-weight: 545;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 20px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 50px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+.page-header-text {
+    /* Smallest font size for very small devices */
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+.page-header-text-underline,
+.category-head-text-style-underline {
+    border-bottom: 1px solid;
+}
+/* Lab Index */
+.index-text {
+    /* Smallest font size for very small devices */
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    }
+
+.index-document {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    aspect-ratio: 780/1102.92;
+    transform: scale(0.65);
+    transform-origin: top center;
+}
+.index-document-content {
+    height: auto;
+    aspect-ratio: 720/1042.52;
+    margin: 10px;
+    /* Smallest font size for very small devices */
+    font-size: 12px;
+    border: 2px solid rgb(0, 0, 0);
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    /* Smallest font size for very small devices */
+    font-size: 12px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border    text-align: center;
+}
+.desktopSite {
+    border: 1px solid #000000;
+    padding: 8px 10px 8px 6px;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+}
+.popup-content p #i,
+.desktopSite #i {
+    margin-left: 30px;
+}
+.popup-content p {
+    margin: 10px 0 10px 0;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content button:hover {
+    background-color: #28a745;
+}
+/* popup design end */
+
+
+/* Navigation Bar design */
+.header {
+    background-color: rgba(17, 45, 58, 0.94);
+    padding: 1rem;
+    border-radius: 1.5cap;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+.nav-logo a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 30px;
+}
+.nav-icon {
+    height: 50px;
+    margin-right: 10px;
+}
+.nav-button {
+    position: relative;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown button {
+    background-color: rgba(6, 21, 29, 0.94);
+    font-size: 16px;
+    color: white;
+    padding: 12px 22px 12px 22px ;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.dropdown-content {
+    margin: auto;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 150;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    padding-left: 18px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown button:hover {
+    background-color: rgba(0, 0, 0);
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Nav design end */
+
+/* Suggestion design */
+.suggestion-text {
+    background: rgba(17, 45, 58, 0.94);
+    color: #ffffff;
+    border-radius: 1cap;
+    margin-top: 20px;
+    padding: 10px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ------------------------ */
+
+/* Form Designing */
+.form-container {
+    margin-top: 20px;
+}
+.form {
+    background-color: rgba(17, 45, 58, 0.94);
+    border-radius: 20px;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.form h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.form-logo img{
+    width: 100%;
+}
+.category-head-text {
+    padding: 15px;
+    font-size: 30px;
+    font-weight: 545;
+}
+label{
+    font-size: 18px;
+}
+input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 15px;
+    border: none ;
+    border-radius: 18px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: rgba(202, 202, 202, 0.4); 
+}
+.head-text{
+    text-align: center;
+}
+::placeholder{
+    color: #cecece;
+}
+
+input:hover {
+    background-color: rgba(170, 170, 170, 0.7);
+}
+
+
+/* Button styling */
+.submit {
+    margin: auto;
+    display: block;
+    width: 180px;
+    padding: 10px;
+    background-color: #01aa4d;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+
+.submit:hover,.download:hover,.image:hover {
+    background-color: #ffffff;
+    color: #000000;
+    opacity: .9;
+    transition-duration: 0.4s;
+}
+.submit:hover:active,.download:hover:active,.image:hover:active {
+    background-color: #01aa4d;
+    color: #ffffff;
+    opacity: .9;
+    transition-duration: 0.2s;
+}
+/* Form design ends  */
+/* Document Design */
+
+.document-holder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;    
+}
+
+.document {
+    width: 780px;
+    min-width: 780px ;
+    height: 1102.92px;
+    background-color: white;
+}
+.document-logo img {
+    width: 100%;
+}
+.document-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.document-watermark img {
+    width: 100%;
+}
+.document-watermark {
+    position: absolute;
+    top: 340px;
+    left: 150px;
+    right: 150px;
+    z-index: -1;
+}
+.document-content {
+    position: relative;
+    height: 1042.52px;
+    margin: 30px;
+    border: 3px solid rgb(0, 0, 0);
     font-size: 18px;
     font-weight: 545;
     padding-left: 55px;
@@ -1539,4 +2511,5 @@ footer p {
     font-size: 14px;
 }
 }
+
 
