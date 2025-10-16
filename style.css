@@ -469,97 +469,552 @@ input:hover {
 }
 
 /* Footer design end */
-
-
 /* --------------------------------------- */
-
-/* ✅ Redmi Note 9 Pro (393 x 873 px) layout */
-@media only screen and (max-width: 399px) {
-    body {
-        background: url(images/diu-mobile.jpg) no-repeat center/cover fixed;
-    }
-
-    .project {
-        margin-left: 6%;
-        margin-right: 6%;
-    }
-
-    .nav-logo a {
-        font-size: 22px;
-    }
-
-    .nav-icon {
-        height: 35px;
-    }
-
-    .dropdown button {
-        font-size: 14px;
-        padding: 10px 16px;
-        border-radius: 8px;
-    }
-
-    .suggestion-text {
-        font-size: 11px;
-        padding: 8px;
-    }
-
-    .form {
-        padding: 25px;
-        border-radius: 15px;
-    }
-
-    .form h1 {
-        font-size: 22px;
-    }
-
-    label {
-        font-size: 14px;
-    }
-
-    input {
-        padding: 12px;
-        font-size: 14px;
-        border-radius: 10px;
-    }
-
-    .document {
-        width: 370px;
-        min-width: 370px;
-        height: 520px;
-    }
-
-    .document-content {
-        margin: 12px;
-        padding-left: 25px;
-        padding-right: 25px;
-        font-size: 9.5px;
-        line-height: 16px;
-        border: 1.5px solid rgba(0, 0, 0, 0.6);
-    }
-
-    .index-document {
-        width: 370px;
-        height: 520px;
-    }
-
-    .index-document-content {
-        margin: 12px;
-        font-size: 10px;
-    }
-
-    .page-header-text {
-        font-size: 9px;
-    }
-
-    .download, .image {
-        font-size: 11px;
-        padding: 8px 14px;
-    }
-
-    .footer {
-        font-size: 11px;
-        padding: 8px;
-    }
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+.project {
+    margin-left: 23%;
+    margin-right: 23%; 
+}
+}
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+.project {
+    margin-left: 20%;
+    margin-right: 20%; 
+}
 }
 
+/* =============================== */
+/* Desktop Layout Force for PDF/Image */
+/* =============================== */
+.desktop-layout #document,
+.desktop-layout #index-document {
+  width: 780px !important;
+  margin: 0 auto !important;
+  font-size: 18px !important;
+  zoom: 1 !important;
+}
 /* --------------------------------------- */
+
+/* Medium devices (tablets,laptops, 601px to 1000px) */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+body {
+    background: url(images/diu.jpg) no-repeat left/cover fixed;
+}
+.project {
+    margin-left: 17%;
+    margin-right: 17%;
+}
+.nav-logo a {
+    font-size: 20px;
+}
+.nav-icon {
+    height: 40px;
+}
+.dropdown button {
+    font-size: 16px;
+}
+.form h1 {
+font-size: 28px;
+}
+.suggestion-text {
+    font-size: 12px;
+}
+.category-head-text {
+    font-size: 25px;
+}
+
+input{
+    font-size: 16px;
+}
+.experiment-tag { 
+    font-size: 24px;
+}
+
+.document {
+    width: 600px;
+    min-width: 600px;
+    height: 848.4px;
+}
+.document-watermark {
+    top: 260px;
+    left: 110px;
+    right: 110px;
+}
+.document-content {
+    height: 808.4px;
+    margin: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 545;
+    padding-left: 35px;
+    padding-right: 35px;
+    line-height: 26px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 100px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 545;
+}
+.page-header-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+
+}
+/* Lab Index */
+.index-text {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    }
+
+.index-document {
+    width: 600px;
+    min-width: 600px;
+    height: 848.4px;
+}
+.index-document-content {
+    height: 808.4px;
+    margin: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    font-size: 15px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 3px;
+    height: 62px;
+}
+#index-header {
+    font-size: 16px;
+}
+#dateSubmission {
+    font-size: 12px;
+}
+
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+}
+#documentContentIndex {
+
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-family: 'Times New Roman', serif;
+}
+.page-reference-text-index {
+    font-size: 10px;
+    margin-top: -16px;
+}
+.page-reference-text {
+    font-size: 10px;
+    margin-top: -16px;
+}
+/* --------------------------- */
+.download,.image{
+    font-size: 16px;
+}
+}
+/* Small devices (phones, 600px and below) */
+@media only screen and (min-width: 450px) and (max-width: 600px) {
+
+body {
+    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
+}
+.nav-logo a {
+    font-size: 20px;
+}
+.nav-icon {
+    height: 30px;
+}
+.dropdown button {
+    font-size: 14px;
+    padding: 9px 14px 9px 14px;
+}
+.project {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.suggestion-text {
+    font-size: 11px;
+}
+.form h1 {
+font-size: 25px;
+}
+
+.form-logo img{
+    width: 100%;
+}
+.category-head-text {
+    font-size: 25px;
+    font-weight: 545;
+}
+label{
+    font-size: 16px;
+}
+input{
+    border: none ;
+    font-size: 16px;
+}
+.experiment-tag { 
+    font-size: 20px;
+}
+.document {
+    width: 420px;
+    min-width: 420px;
+    height: 593.88px;
+}
+.document-watermark {
+    top: 200px;
+    left: 80px;
+    right: 80px;
+}
+.document-content {
+    height: 565.88px;
+    margin: 14px;
+    border: 1.5px solid;
+    font-size: 10px;
+    font-weight: 445;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 18px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 70px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 445;
+}
+.page-header-text {
+    font-size: 10px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+.page-header-text-underline,
+.category-head-text-style-underline {
+    border-bottom: 1px solid;
+}
+/* Lab Index */
+.index-text {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+ }
+
+.index-document {
+    width: 420px;
+    min-width: 420px;
+    height: 593.88px;
+}
+.index-document-content {
+    height: 565.88px;
+    margin: 14px;
+    font-size: 14px;
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    font-size: 12px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 1px;
+    height: 43.9px;
+}
+#index-header {
+    font-size: 12px;
+    padding-top: 10px;
+}
+#dateSubmission {
+    font-size: 12px;
+}
+
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 12px;
+    font-size: 10px;
+}
+#documentContentIndex {
+
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 12px;
+    font-family: 'Times New Roman', serif;
+}
+/* --------------------------- */
+.page-reference-text-index {
+    font-size: 8px;
+    margin-top: -12px;
+}
+.page-reference-text {
+    font-size: 8px;
+    margin-top: -12px;
+}
+.download,.image{
+    font-size: 10px;
+    padding: 8px 12px;
+}
+.footer a {
+    font-size: 12px;
+}
+footer p {
+    font-size: 12px;
+}
+.footer .feedback {
+    font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 449px) {
+
+body {
+    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
+}
+.nav-logo a {
+    font-size: 20px;
+}
+.nav-icon {
+    height: 30px;
+}
+.dropdown button {
+    font-size: 14px;
+    padding: 9px 14px 9px 14px;
+}
+.dropdown-content {
+    margin-left: 5px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+.dropdown-content a {
+    font-size: 10px;
+    padding: 8px;
+    padding-left: 8px;
+}
+
+.project {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.suggestion-text {
+    font-size: 10px;
+}
+.form h1 {
+font-size: 20px;
+}
+
+.form-logo img{
+    width: 100%;
+}
+.category-head-text {
+    font-size: 20px;
+    font-weight: 545;
+}
+label{
+    font-size: 16px;
+}
+input{
+    border: none ;
+    font-size: 16px;
+}
+.experiment-tag { 
+    font-size: 20px;
+}
+.document {
+    width: 350px;
+    min-width: 350px;
+    height: 494.9px;
+}
+.document-watermark {
+    top: 160px;
+    left: 70px;
+    right: 70px;
+}
+.document-content {
+    height: 474.9px;
+    margin: 10px;
+    border: 1.5px solid rgb(0, 0, 0, 0.5);
+    font-size: 9px;
+    font-weight: 445;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 15px;
+    font-family: 'Times New Roman', serif;
+}
+.space {
+    padding-left: 60px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 445;
+}
+.page-header-text {
+    font-size: 8px;
+    margin-bottom: 8px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
+}
+.page-header-text-underline,
+.category-head-text-style-underline {
+    border-bottom: 1px solid;
+}
+/* Lab Index */
+.index-text {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    }
+
+.index-document {
+    width: 350px;
+    min-width: 350px;
+    height: 494.9px;
+}
+.index-document-content {
+    height: 474.9px;
+    margin: 10px;
+    font-size: 14px;
+    border: 1.5px solid rgb(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', serif; 
+}
+.index-border {
+    font-size: 8px;
+    border-left: 1px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+}
+.index-left-bottom {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+}
+.index-right-bottom {
+    border-left: 1px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+}
+.index-border-header {
+    border-left: 1px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+}
+.index-border-footer {
+    border-left: 1px solid rgb(0, 0, 0, 0.5);
+}
+.index-right-footer {
+    border-left: 1px solid rgb(0, 0, 0, 0.5);
+}
+
+.index-border,
+.index-left-bottom,
+.index-right-bottom,
+.index-border-header,
+.index-border-footer, 
+.index-right-footer, 
+.index-left-footer {
+    padding: 1px;
+    height: 36.4px;
+}
+#index-header {
+    font-size: 9px;
+    padding-top: 10px;
+}
+#dateSubmission {
+    font-size: 10px;
+}
+
+#index-experiment-no,
+#dateSubmission,
+#pageLimit {
+    text-align: center;
+    padding-top: 12px;
+    font-size: 8px;
+}
+#documentContentIndex {
+
+    border: 0.5px solid rgb(0, 0, 0, 0.5);
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 9px;
+    font-family: 'Times New Roman', serif;
+}
+/* --------------------------- */
+.page-reference-text-index {
+    font-size: 5px;
+    margin-top: -9px;
+}
+.page-reference-text {
+    font-size: 5px;
+    margin-top: -9px;
+}
+
+
+.download,.image{
+    font-size: 10px;
+    padding: 8px 12px;
+}
+.footer a {
+    font-size: 12px;
+}
+footer p {
+    font-size: 12px;
+}
+.footer .feedback {
+    font-size: 16px;
+}
+}
