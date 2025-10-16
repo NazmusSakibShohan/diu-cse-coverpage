@@ -270,11 +270,11 @@ input:hover {
     height: 1042.52px;
     margin: 30px;
     border: 3px solid rgb(0, 0, 0);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 545;
     padding-left: 55px;
     padding-right: 55px;
-    line-height: 30px;
+    line-height: 35px;
     z-index: 1;
     font-family: 'Times New Roman', serif;
     letter-spacing: 0.05em;
@@ -284,7 +284,7 @@ input:hover {
 .page-header-text {
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
     font-family: 'Times New Roman', serif;
     font-weight: 700;
@@ -315,7 +315,7 @@ input:hover {
 
 .experiment-tag { 
     text-align: center;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 545;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -324,7 +324,7 @@ input:hover {
 
 .index-text {
     color: rgb(39, 39, 158);
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 700;
     margin-top: 60px;
     margin-bottom: 20px;
@@ -342,7 +342,7 @@ input:hover {
     height: 1042.52px;
     margin: 30px;
     border: 3px solid rgb(0, 0, 0);
-    font-size: 18px;
+    font-size: 20px;
     z-index: 1;
     font-family: 'Times New Roman', serif; 
 }
@@ -383,10 +383,10 @@ input:hover {
 }
 #index-header {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: 22px;
 }
 #dateSubmission {
-    font-size: 14px;
+    font-size: 16px;
 }
 #index-experiment-no {
     text-align: center;
@@ -405,7 +405,7 @@ input:hover {
     margin-left: 10px;
     margin-right: 10px;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0.05em;
     font-family: 'Times New Roman', serif;
 }
@@ -469,16 +469,97 @@ input:hover {
 }
 
 /* Footer design end */
+
+
 /* --------------------------------------- */
-@media only screen and (min-width: 1001px) and (max-width: 1200px) {
-.project {
-    margin-left: 23%;
-    margin-right: 23%; 
-}
-}
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-.project {
-    margin-left: 20%;
-    margin-right: 20%; 
-}
+
+/* ✅ Redmi Note 9 Pro (393 x 873 px) layout */
+@media only screen and (max-width: 399px) {
+    body {
+        background: url(images/diu-mobile.jpg) no-repeat center/cover fixed;
     }
+
+    .project {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .nav-logo a {
+        font-size: 22px;
+    }
+
+    .nav-icon {
+        height: 35px;
+    }
+
+    .dropdown button {
+        font-size: 14px;
+        padding: 10px 16px;
+        border-radius: 8px;
+    }
+
+    .suggestion-text {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .form {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .form h1 {
+        font-size: 22px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .document {
+        width: 370px;
+        min-width: 370px;
+        height: 520px;
+    }
+
+    .document-content {
+        margin: 12px;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 9.5px;
+        line-height: 16px;
+        border: 1.5px solid rgba(0, 0, 0, 0.6);
+    }
+
+    .index-document {
+        width: 370px;
+        height: 520px;
+    }
+
+    .index-document-content {
+        margin: 12px;
+        font-size: 10px;
+    }
+
+    .page-header-text {
+        font-size: 9px;
+    }
+
+    .download, .image {
+        font-size: 11px;
+        padding: 8px 14px;
+    }
+
+    .footer {
+        font-size: 11px;
+        padding: 8px;
+    }
+}
+
+/* --------------------------------------- */
