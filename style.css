@@ -491,7 +491,7 @@ input:hover {
   width: 780px !important;
   margin: 0 auto !important;
   font-size: 18px !important;
-  zoom: 1 !important;
+  zoom: 0 !important;
 }
 /* --------------------------------------- */
 
@@ -1018,3 +1018,4 @@ footer p {
     font-size: 16px;
 }
 }
+
