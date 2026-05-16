@@ -361,8 +361,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 /* Scale wrapper — JS sets transform per viewport */
 .document-scale-wrapper {
-  transform-origin: top left;
-  /* default scale:1 on desktop */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform-origin: top center;
 }
 
 /* The actual A4 document — NEVER resized by media queries */
@@ -392,7 +394,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .document-content {
   position: relative;
   height: 1042.52px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
   margin-left: 30px;
   margin-right: 30px;

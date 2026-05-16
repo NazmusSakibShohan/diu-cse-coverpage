@@ -54,7 +54,7 @@ function updateDocumentScale() {
   const scale     = Math.min(1, available / docWidth);
 
   wrapper.style.transform       = `scale(${scale})`;
-  wrapper.style.transformOrigin = 'top left';
+  wrapper.style.transformOrigin = 'top center';
 
   // Shrink only the holder (buttons sit outside it as a sibling — not clipped)
   if (holder) holder.style.height = `${docHeight * scale}px`;
@@ -226,10 +226,9 @@ async function captureAndDownload(format) {
   // Snapshot current transform, then reset it so html2canvas
   // sees the element at its true 780px layout size
   const savedTransform = wrapper ? wrapper.style.transform : '';
-  const savedOrigin    = wrapper ? wrapper.style.transformOrigin : '';
   if (wrapper) {
     wrapper.style.transform       = 'none';
-    wrapper.style.transformOrigin = 'top left';
+    wrapper.style.transformOrigin = 'top center';
   }
 
   // Small delay so the DOM repaints before capture
@@ -268,7 +267,7 @@ async function captureAndDownload(format) {
     // Restore visual scale
     if (wrapper) {
       wrapper.style.transform       = savedTransform;
-      wrapper.style.transformOrigin = savedOrigin;
+      wrapper.style.transformOrigin = 'top center';
     }
     if (overlay) overlay.classList.remove('active');
   }
