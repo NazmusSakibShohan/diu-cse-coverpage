@@ -1,1021 +1,592 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ============================================================
+   DIU CSE Cover Page — Modern UI
+   Fix: document always stays 780px; mobile uses CSS scale()
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --navy:        #0b1a27;
+  --navy-mid:    #132233;
+  --navy-glass:  rgba(11, 26, 39, 0.82);
+  --green:       #059669;
+  --green-light: #10b981;
+  --green-dim:   rgba(5, 150, 105, 0.18);
+  --green-glow:  rgba(5, 150, 105, 0.35);
+  --white:       #ffffff;
+  --muted:       rgba(255,255,255,0.55);
+  --border:      rgba(255,255,255,0.10);
+  --input-bg:    rgba(255,255,255,0.07);
+  --input-focus: rgba(5, 150, 105, 0.12);
+  --r-lg:        20px;
+  --r-md:        12px;
+  --r-sm:        8px;
+  --shadow:      0 24px 64px rgba(0,0,0,0.45);
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ── Reset ─────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+/* ── Body & Background ─────────────────────────── */
 body {
-    font-family: Roboto, Arial;
-    background: url(images/diu.jpg) no-repeat left/cover fixed;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -2;
+  background: url(images/diu.jpg) no-repeat center / cover;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background: linear-gradient(
+    150deg,
+    rgba(11,26,39,0.93) 0%,
+    rgba(11,26,39,0.86) 55%,
+    rgba(5,100,70,0.10) 100%
+  );
+}
+@media (max-width: 600px) {
+  body::before { background-image: url(images/diu-mobile.jpg); }
+}
+
+/* ── Layout wrapper ────────────────────────────── */
 .project {
-    margin-left: 25%;
-    margin-right: 25%;
-}
-/* Popup for mobile users */
-.popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 1000;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    border-radius: 1cap;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.desktopSite {
-    border: 1px solid #000000;
-    padding: 8px 10px 8px 6px;
-    border-radius: 3px;
-    background-color: #f0f0f0;
-}
-.popup-content p #i,
-.desktopSite #i {
-    margin-left: 30px;
-}
-.popup-content p {
-    margin: 10px 0 10px 0;
-}
-
-.popup-content button {
-    margin-top: 10px;
-    padding: 10px 30px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.popup-content button:hover {
-    background-color: #28a745;
-}
-/* popup design end */
-
-
-/* Navigation Bar design */
+/* ── NAVIGATION ────────────────────────────────── */
 .header {
-    background-color: rgba(17, 45, 58, 0.94);
-    padding: 1rem;
-    border-radius: 1.5cap;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+  background: rgba(11,26,39,0.72);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  padding: 0 20px;
 }
 .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  gap: 12px;
 }
 .nav-logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
 }
-.nav-logo a {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 30px;
+.nav-icon { height: 42px; flex-shrink: 0; }
+.nav-logo h2 {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.nav-icon {
-    height: 50px;
-    margin-right: 10px;
+
+/* Dropdown */
+.nav-button { position: relative; flex-shrink: 0; }
+.dropdown { position: relative; display: inline-block; }
+.dropdown > button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  padding: 9px 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s var(--ease), transform 0.2s, box-shadow 0.25s;
+  letter-spacing: 0.02em;
 }
-.nav-button {
-    position: relative;
-}
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-.dropdown button {
-    background-color: rgba(6, 21, 29, 0.94);
-    font-size: 16px;
-    color: white;
-    padding: 12px 22px 12px 22px ;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+.dropdown > button:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px var(--green-glow);
 }
 .dropdown-content {
-    margin: auto;
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 150;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 175px;
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: dropIn 0.2s var(--ease);
+}
+.dropdown:hover .dropdown-content { display: block; }
+@keyframes dropIn {
+  from { opacity:0; transform: translateY(-8px); }
+  to   { opacity:1; transform: translateY(0);    }
 }
 .dropdown-content a {
-    color: black;
-    padding: 12px;
-    padding-left: 18px;
-    text-decoration: none;
-    display: block;
+  display: block;
+  padding: 11px 18px;
+  color: rgba(255,255,255,0.85);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.18s, color 0.18s;
 }
-.dropdown button:hover {
-    background-color: rgba(0, 0, 0);
-}
-.dropdown-content a:hover {
-    background-color: #ddd;
-    border-radius: 10px;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-/* Nav design end */
+.dropdown-content a:last-child { border-bottom: none; }
+.dropdown-content a:hover { background: var(--green-dim); color: var(--green-light); }
 
-/* Suggestion design */
+/* ── HINT BANNER ───────────────────────────────── */
 .suggestion-text {
-    background: rgba(17, 45, 58, 0.94);
-    color: #ffffff;
-    border-radius: 1cap;
-    margin-top: 20px;
-    padding: 10px;
-    line-height: 25px;
-    text-align: center;
-    font-size: 14px;
+  background: rgba(5,150,105,0.10);
+  border: 1px solid rgba(5,150,105,0.28);
+  border-radius: var(--r-lg);
+  margin-top: 28px;
+  padding: 14px 22px;
+  text-align: center;
+  animation: fadeUp 0.45s var(--ease) both;
+}
+.suggestion-text h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 3px;
+}
+.suggestion-text h2 {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
 }
 
-/* ------------------------ */
-
-/* Form Designing */
+/* ── FORM CARD ─────────────────────────────────── */
 .form-container {
-    margin-top: 20px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.5s var(--ease) 0.08s both;
 }
 .form {
-    background-color: rgba(17, 45, 58, 0.94);
-    border-radius: 20px;
-    color: white;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
+  background: var(--navy-glass);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  padding: 44px 40px 36px;
+  display: flex;
+  flex-direction: column;
 }
-.form h1 {
-    margin-bottom: 15px;
-    font-size: 30px;
+@media (max-width: 560px) {
+  .form { padding: 28px 18px 26px; }
 }
-.form-group{
-    margin-bottom: 10px;
+
+/* Form top (logo + title) */
+.form-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
 }
-.form-logo img{
-    width: 100%;
+.form-logo img {
+  width: 200px;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
+}
+.head-text { text-align: center; margin-top: 14px; }
+.head-text h1 {
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.head-text h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 44px; height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+/* Section divider */
+.section-divider {
+  margin: 28px 0 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  background: var(--green-dim);
+  border-radius: 99px;
+}
+
+/* Legacy support for category-head-text inside form-group#underline */
+.form-group {
+  margin-bottom: 14px;
+}
+.form-group#underline {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
 }
 .category-head-text {
-    padding: 15px;
-    font-size: 30px;
-    font-weight: 545;
-}
-label{
-    font-size: 18px;
-}
-input{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    padding: 15px;
-    border: none ;
-    border-radius: 18px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: rgba(202, 202, 202, 0.4); 
-}
-.head-text{
-    text-align: center;
-}
-::placeholder{
-    color: #cecece;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  background: var(--green-dim);
+  border-radius: 99px;
+  display: inline-block;
 }
 
-input:hover {
-    background-color: rgba(170, 170, 170, 0.7);
+label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+input {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  transition: background 0.22s var(--ease), border-color 0.22s, box-shadow 0.22s;
+  margin-bottom: 2px;
+}
+input:hover { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.2); }
+input:focus {
+  background: var(--input-focus);
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-glow);
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); opacity: 0.55; cursor: pointer;
+}
+::placeholder { color: rgba(255,255,255,0.28); }
+
+/* Index form groups */
+.index-form-group {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
 }
 
-
-/* Button styling */
+/* Submit button */
 .submit {
-    margin: auto;
-    display: block;
-    width: 180px;
-    padding: 10px;
-    background-color: #01aa4d;
-    border: none;
-    border-radius: 16px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    
+  margin: 32px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  padding: 14px 24px;
+  background: var(--green);
+  border: none;
+  border-radius: var(--r-md);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), transform 0.2s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
 }
+.submit::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+}
+.submit:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--green-glow);
+}
+.submit:active { transform: translateY(0); }
 
-.submit:hover,.download:hover,.image:hover {
-    background-color: #ffffff;
-    color: #000000;
-    opacity: .9;
-    transition-duration: 0.4s;
-}
-.submit:hover:active,.download:hover:active,.image:hover:active {
-    background-color: #01aa4d;
-    color: #ffffff;
-    opacity: .9;
-    transition-duration: 0.2s;
-}
-/* Form design ends  */
-/* Document Design */
-
+/* ── COVER PAGE PREVIEW ─────────────────────────── 
+   KEY FIX: .document is ALWAYS 780px wide.
+   On small screens we use transform: scale() to fit
+   visually — but the DOM element stays 780px so
+   html2canvas always captures a consistent A4 size.
+   ──────────────────────────────────────────────── */
 .document-holder {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+/* Scale wrapper — JS sets transform per viewport */
+.document-scale-wrapper {
+  transform-origin: top left;
+  /* default scale:1 on desktop */
 }
 
+/* The actual A4 document — NEVER resized by media queries */
 .document {
-    width: 780px;
-    min-width: 780px ;
-    height: 1102.92px;
-    background-color: white;
-}
-.document-logo img {
-    width: 100%;
+  width: 780px;
+  min-width: 780px;
+  height: 1122.92px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.08);
+  position: relative;
 }
 .document-logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
-.document-watermark img {
-    width: 100%;
+.document-logo img {
+  width: 100%;
+  display: block;
 }
-.document-watermark {
-    position: absolute;
-    top: 340px;
-    left: 150px;
-    right: 150px;
-    z-index: -1;
-}
+
+.document-watermark { position: absolute; top: 340px; left: 150px; right: 150px; z-index: 0; }
+.document-watermark img { width: 100%; }
+
 .document-content {
-    position: relative;
-    height: 1042.52px;
-    margin: 30px;
-    border: 3px solid rgb(0, 0, 0);
-    font-size: 18px;
-    font-weight: 545;
-    padding-left: 55px;
-    padding-right: 55px;
-    line-height: 35px;
-    z-index: 1;
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 0.05em;
-    
+  position: relative;
+  height: 1042.52px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 3px solid rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 545;
+  padding-top: 10px;
+  padding-left: 55px;
+  padding-right: 55px;
+  line-height: 35px;
+  z-index: 1;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.05em;
+  overflow: hidden;
 }
-
 .page-header-text {
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 700;
-
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
 }
-.page-header-text-underline {
-    border-bottom: 2px solid black;
-}
+.page-header-text-underline { border-bottom: 2px solid #000; }
 .space {
-    padding-left: 120px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 545;
+  padding-left: 120px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 545;
 }
 .category-head-text-style {
-    color: rgb(24, 24, 138);
-    font-family: 'Times New Roman', serif;
-    font-weight: 700;
+  color: rgb(24,24,138);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
 }
-.category-head-text-style-underline {
-    border-bottom: 2px solid rgb(24, 24, 138);
-}
+.category-head-text-style-underline { border-bottom: 2px solid rgb(24,24,138); }
 .dateColor {
-    color: #000000;
-    font-family: 'Times New Roman', serif;
-    font-weight: 545;
+  color: #000;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 545;
 }
-/* Index Document Design */
-
-.experiment-tag { 
-    text-align: center;
-    font-size: 25px;
-    font-weight: 545;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(255, 255, 255);
+.page-reference-text {
+  text-align: center;
+  font-size: 12px;
+  margin-top: -25px;
 }
 
-.index-text {
-    color: rgb(39, 39, 158);
-    font-size: 50px;
-    font-weight: 700;
-    margin-top: 60px;
-    margin-bottom: 20px;
- }
-
+/* ── INDEX DOCUMENT (same 780px rule) ──────────── */
 .index-document {
-    max-width: 780px;
-    min-width: 780px;
-    height: 1102.92px;
-    background-color: white;
-    text-align: center;
+  width: 780px;
+  min-width: 780px;
+  height: 1102.92px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.index-text {
+  color: rgb(39,39,158);
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .index-document-content {
-    position: relative;
-    height: 1042.52px;
-    margin: 30px;
-    border: 3px solid rgb(0, 0, 0);
-    font-size: 20px;
-    z-index: 1;
-    font-family: 'Times New Roman', serif; 
+  position: relative;
+  height: 1042.52px;
+  margin: 30px;
+  border: 3px solid #000;
+  font-size: 20px;
+  z-index: 1;
+  font-family: 'Times New Roman', Times, serif;
 }
-.index-border {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-left-bottom {
-    text-align: center;
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-right-bottom {
-    text-align: center;
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-header {
-    text-align: center;
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-footer {
-    border-left: 1px solid rgb(0, 0, 0);
-}
-.index-right-footer {
-    border-left: 1px solid rgb(0, 0, 0);
+.experiment-tag {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 545;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
+/* Index grid */
+#documentContentIndex {
+  display: grid;
+  grid-template-columns: 1fr 2fr 6fr 1fr 1fr;
+  border: 1px solid #000;
+  margin: 0 10px;
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  font-family: 'Times New Roman', Times, serif;
+}
 .index-border,
 .index-left-bottom,
 .index-right-bottom,
 .index-border-header,
-.index-border-footer, 
-.index-right-footer, 
+.index-border-footer,
+.index-right-footer,
 .index-left-footer {
-    padding: 5px;
-    height: 80.6px;
+  padding: 5px;
+  height: 80.6px;
 }
-#index-header {
-    padding-top: 20px;
-    font-size: 22px;
+#index-header { padding-top: 20px; font-size: 22px; text-align: center; }
+.index-left-bottom { text-align: center; border-bottom: 1px solid #000; }
+.index-right-bottom { text-align: center; border-left: 1px solid #000; border-bottom: 1px solid #000; }
+.index-border { border-left: 1px solid #000; border-bottom: 1px solid #000; }
+.index-border-header { text-align: center; border-left: 1px solid #000; border-bottom: 1px solid #000; }
+.index-border-footer { border-left: 1px solid #000; }
+.index-right-footer { border-left: 1px solid #000; }
+#dateSubmission { font-size: 16px; }
+#index-experiment-no, #dateSubmission, #pageLimit { text-align: center; padding-top: 30px; }
+.page-reference-text-index { font-size: 12px; margin-top: -25px; }
+
+/* ── DOWNLOAD BUTTONS (outside scale wrapper) ──── */
+.document-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 28px;
 }
-#dateSubmission {
-    font-size: 16px;
+.download, .image {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 12px 26px;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background 0.22s var(--ease), transform 0.2s, box-shadow 0.22s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.03em;
 }
-#index-experiment-no {
-    text-align: center;
+.download { background: var(--green); color: #fff; }
+.download:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px var(--green-glow);
 }
-#index-experiment-no,
-#dateSubmission,
-#pageLimit {
-    text-align: center;
-    padding-top: 30px;
+.image {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
-#documentContentIndex {
-    display: grid;
-    grid-template-columns: 1fr 2fr 6fr 1fr 1fr;
-    border: 1px solid rgb(0, 0, 0);
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: left;
-    font-size: 18px;
-    letter-spacing: 0.05em;
-    font-family: 'Times New Roman', serif;
+.image:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+.download:active, .image:active { transform: translateY(0); }
+
+/* ── DOWNLOAD LOADING OVERLAY ───────────────────── */
+#download-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(11,26,39,0.88);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+#download-overlay.active { display: flex; }
+.dl-spinner {
+  width: 50px; height: 50px;
+  border: 4px solid rgba(5,150,105,0.25);
+  border-top-color: var(--green-light);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+#download-overlay p {
+  color: #fff; font-size: 15px; font-weight: 500;
 }
 
-/* Index Design End */
-
-/* Website reference text */
-.page-reference-text-index {
-    font-size: 12px;
-    margin-top: -25px;
-}
-.page-reference-text {
-    text-align: center;
-    font-size: 12px;
-    margin-top: -25px;
-}
-/* ------------------------ */
-.document-buttons{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.download,.image{
-    width: auto !important;
-    padding: 12px;
-    background-color: #01aa4d;
-    border: none;
-    border-radius: 1cap;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 50;
-}
-/* Document design end */
-
-
-/* Footer design */
+/* ── FOOTER ─────────────────────────────────────── */
 .footer {
-    background-color: rgba(17, 45, 58, 0.94);
-    border-radius: 1.5cap;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-    bottom: 0;
+  background: rgba(11,26,39,0.80);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  padding: 22px 20px;
+  font-size: 13px;
 }
-.footer .feedback {
-    margin-bottom: 14px;
-    font-size: 16px;
-}
-.footer a {
-    color: white;
-    text-decoration: none;
-}
-.footer:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: .6s;
+.footer p { margin: 4px 0; }
+.footer .feedback { color: var(--white); font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+.footer a { color: var(--green-light); text-decoration: none; transition: color 0.2s; }
+.footer a:hover { color: #fff; }
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(18px); }
+  to   { opacity:1; transform: translateY(0);    }
 }
 
-/* Footer design end */
-/* --------------------------------------- */
-@media only screen and (min-width: 1001px) and (max-width: 1200px) {
-.project {
-    margin-left: 23%;
-    margin-right: 23%; 
-}
-}
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-.project {
-    margin-left: 20%;
-    margin-right: 20%; 
-}
-}
-
-/* =============================== */
-/* Desktop Layout Force for PDF/Image */
-/* =============================== */
-.desktop-layout #document,
-.desktop-layout #index-document {
-  width: 780px !important;
-  margin: 0 auto !important;
-  font-size: 18px !important;
-  zoom: 0 !important;
-}
-/* --------------------------------------- */
-
-/* Medium devices (tablets,laptops, 601px to 1000px) */
-@media only screen and (min-width: 601px) and (max-width: 800px) {
-body {
-    background: url(images/diu.jpg) no-repeat left/cover fixed;
-}
-.project {
-    margin-left: 17%;
-    margin-right: 17%;
-}
-.nav-logo a {
-    font-size: 20px;
-}
-.nav-icon {
-    height: 40px;
-}
-.dropdown button {
-    font-size: 16px;
-}
-.form h1 {
-font-size: 28px;
-}
-.suggestion-text {
-    font-size: 12px;
-}
-.category-head-text {
-    font-size: 25px;
-}
-
-input{
-    font-size: 16px;
-}
-.experiment-tag { 
-    font-size: 24px;
-}
-
-.document {
-    width: 600px;
-    min-width: 600px;
-    height: 848.4px;
-}
-.document-watermark {
-    top: 260px;
-    left: 110px;
-    right: 110px;
-}
-.document-content {
-    height: 808.4px;
-    margin: 20px;
-    border: 3px solid rgb(0, 0, 0);
-    font-size: 14px;
-    font-weight: 545;
-    padding-left: 35px;
-    padding-right: 35px;
-    line-height: 26px;
-    font-family: 'Times New Roman', serif;
-}
-.space {
-    padding-left: 100px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 545;
-}
-.page-header-text {
-    font-size: 16px;
-    margin-bottom: 15px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 700;
-
-}
-/* Lab Index */
-.index-text {
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    }
-
-.index-document {
-    width: 600px;
-    min-width: 600px;
-    height: 848.4px;
-}
-.index-document-content {
-    height: 808.4px;
-    margin: 20px;
-    border: 3px solid rgb(0, 0, 0);
-    font-size: 18px;
-    font-family: 'Times New Roman', serif; 
-}
-.index-border {
-    font-size: 15px;
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-left-bottom {
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-right-bottom {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-header {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-footer {
-    border-left: 1px solid rgb(0, 0, 0);
-}
-.index-right-footer {
-    border-left: 1px solid rgb(0, 0, 0);
-}
-
-.index-border,
-.index-left-bottom,
-.index-right-bottom,
-.index-border-header,
-.index-border-footer, 
-.index-right-footer, 
-.index-left-footer {
-    padding: 3px;
-    height: 62px;
-}
-#index-header {
-    font-size: 16px;
-}
-#dateSubmission {
-    font-size: 12px;
-}
-
-#index-experiment-no,
-#dateSubmission,
-#pageLimit {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 14px;
-}
-#documentContentIndex {
-
-    border: 1px solid rgb(0, 0, 0);
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 18px;
-    font-family: 'Times New Roman', serif;
-}
-.page-reference-text-index {
-    font-size: 10px;
-    margin-top: -16px;
-}
-.page-reference-text {
-    font-size: 10px;
-    margin-top: -16px;
-}
-/* --------------------------- */
-.download,.image{
-    font-size: 16px;
-}
-}
-/* Small devices (phones, 600px and below) */
-@media only screen and (min-width: 450px) and (max-width: 600px) {
-
-body {
-    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
-}
-.nav-logo a {
-    font-size: 20px;
-}
-.nav-icon {
-    height: 30px;
-}
-.dropdown button {
-    font-size: 14px;
-    padding: 9px 14px 9px 14px;
-}
-.project {
-    margin-left: 8%;
-    margin-right: 8%;
-}
-.suggestion-text {
-    font-size: 11px;
-}
-.form h1 {
-font-size: 25px;
-}
-
-.form-logo img{
-    width: 100%;
-}
-.category-head-text {
-    font-size: 25px;
-    font-weight: 545;
-}
-label{
-    font-size: 16px;
-}
-input{
-    border: none ;
-    font-size: 16px;
-}
-.experiment-tag { 
-    font-size: 20px;
-}
-.document {
-    width: 420px;
-    min-width: 420px;
-    height: 593.88px;
-}
-.document-watermark {
-    top: 200px;
-    left: 80px;
-    right: 80px;
-}
-.document-content {
-    height: 565.88px;
-    margin: 14px;
-    border: 1.5px solid;
-    font-size: 10px;
-    font-weight: 445;
-    padding-left: 25px;
-    padding-right: 25px;
-    line-height: 18px;
-    font-family: 'Times New Roman', serif;
-}
-.space {
-    padding-left: 70px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 445;
-}
-.page-header-text {
-    font-size: 10px;
-    margin-bottom: 15px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 700;
-}
-.page-header-text-underline,
-.category-head-text-style-underline {
-    border-bottom: 1px solid;
-}
-/* Lab Index */
-.index-text {
-    font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: 10px;
- }
-
-.index-document {
-    width: 420px;
-    min-width: 420px;
-    height: 593.88px;
-}
-.index-document-content {
-    height: 565.88px;
-    margin: 14px;
-    font-size: 14px;
-    font-family: 'Times New Roman', serif; 
-}
-.index-border {
-    font-size: 12px;
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-left-bottom {
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-right-bottom {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-header {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-.index-border-footer {
-    border-left: 1px solid rgb(0, 0, 0);
-}
-.index-right-footer {
-    border-left: 1px solid rgb(0, 0, 0);
-}
-
-.index-border,
-.index-left-bottom,
-.index-right-bottom,
-.index-border-header,
-.index-border-footer, 
-.index-right-footer, 
-.index-left-footer {
-    padding: 1px;
-    height: 43.9px;
-}
-#index-header {
-    font-size: 12px;
-    padding-top: 10px;
-}
-#dateSubmission {
-    font-size: 12px;
-}
-
-#index-experiment-no,
-#dateSubmission,
-#pageLimit {
-    text-align: center;
-    padding-top: 12px;
-    font-size: 10px;
-}
-#documentContentIndex {
-
-    border: 1px solid rgb(0, 0, 0);
-    margin-left: 2px;
-    margin-right: 2px;
-    font-size: 12px;
-    font-family: 'Times New Roman', serif;
-}
-/* --------------------------- */
-.page-reference-text-index {
-    font-size: 8px;
-    margin-top: -12px;
-}
-.page-reference-text {
-    font-size: 8px;
-    margin-top: -12px;
-}
-.download,.image{
-    font-size: 10px;
-    padding: 8px 12px;
-}
-.footer a {
-    font-size: 12px;
-}
-footer p {
-    font-size: 12px;
-}
-.footer .feedback {
-    font-size: 16px;
-}
-}
-
-@media only screen and (max-width: 449px) {
-
-body {
-    background: url(images/diu-mobile.jpg) no-repeat left/cover fixed;
-}
-.nav-logo a {
-    font-size: 20px;
-}
-.nav-icon {
-    height: 30px;
-}
-.dropdown button {
-    font-size: 14px;
-    padding: 9px 14px 9px 14px;
-}
-.dropdown-content {
-    margin-left: 5px;
-    border-radius: 10px;
-    min-width: 80px;
-}
-.dropdown-content a {
-    font-size: 10px;
-    padding: 8px;
-    padding-left: 8px;
-}
-
-.project {
-    margin-left: 4%;
-    margin-right: 4%;
-}
-.suggestion-text {
-    font-size: 10px;
-}
-.form h1 {
-font-size: 20px;
-}
-
-.form-logo img{
-    width: 100%;
-}
-.category-head-text {
-    font-size: 20px;
-    font-weight: 545;
-}
-label{
-    font-size: 16px;
-}
-input{
-    border: none ;
-    font-size: 16px;
-}
-.experiment-tag { 
-    font-size: 20px;
-}
-.document {
-    width: 350px;
-    min-width: 350px;
-    height: 494.9px;
-}
-.document-watermark {
-    top: 160px;
-    left: 70px;
-    right: 70px;
-}
-.document-content {
-    height: 474.9px;
-    margin: 10px;
-    border: 1.5px solid rgb(0, 0, 0, 0.5);
-    font-size: 9px;
-    font-weight: 445;
-    padding-left: 25px;
-    padding-right: 25px;
-    line-height: 15px;
-    font-family: 'Times New Roman', serif;
-}
-.space {
-    padding-left: 60px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 445;
-}
-.page-header-text {
-    font-size: 8px;
-    margin-bottom: 8px;
-    font-family: 'Times New Roman', serif;
-    font-weight: 700;
-}
-.page-header-text-underline,
-.category-head-text-style-underline {
-    border-bottom: 1px solid;
-}
-/* Lab Index */
-.index-text {
-    font-size: 25px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    }
-
-.index-document {
-    width: 350px;
-    min-width: 350px;
-    height: 494.9px;
-}
-.index-document-content {
-    height: 474.9px;
-    margin: 10px;
-    font-size: 14px;
-    border: 1.5px solid rgb(0, 0, 0, 0.5);
-    font-family: 'Times New Roman', serif; 
-}
-.index-border {
-    font-size: 8px;
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-}
-.index-left-bottom {
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-}
-.index-right-bottom {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-}
-.index-border-header {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-}
-.index-border-footer {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-}
-.index-right-footer {
-    border-left: 1px solid rgb(0, 0, 0, 0.5);
-}
-
-.index-border,
-.index-left-bottom,
-.index-right-bottom,
-.index-border-header,
-.index-border-footer, 
-.index-right-footer, 
-.index-left-footer {
-    padding: 1px;
-    height: 36.4px;
-}
-#index-header {
-    font-size: 9px;
-    padding-top: 10px;
-}
-#dateSubmission {
-    font-size: 10px;
-}
-
-#index-experiment-no,
-#dateSubmission,
-#pageLimit {
-    text-align: center;
-    padding-top: 12px;
-    font-size: 8px;
-}
-#documentContentIndex {
-
-    border: 0.5px solid rgb(0, 0, 0, 0.5);
-    margin-left: 1px;
-    margin-right: 1px;
-    font-size: 9px;
-    font-family: 'Times New Roman', serif;
-}
-/* --------------------------- */
-.page-reference-text-index {
-    font-size: 5px;
-    margin-top: -9px;
-}
-.page-reference-text {
-    font-size: 5px;
-    margin-top: -9px;
-}
-
-
-.download,.image{
-    font-size: 10px;
-    padding: 8px 12px;
-}
-.footer a {
-    font-size: 12px;
-}
-footer p {
-    font-size: 12px;
-}
-.footer .feedback {
-    font-size: 16px;
-}
-}
-
+/* ── Context menu disabled marker ───────────────── */
+/* (right-click blocked in JS) */
